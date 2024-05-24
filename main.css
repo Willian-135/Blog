@@ -1,0 +1,648 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+    background-color: #ffe3dc;
+    padding-top: 164px;
+}
+
+img {
+    max-width: 100%;
+}
+
+p {
+    font-family: 'Open Sans', sans-serif;
+}
+
+@keyframes fadeOut {
+    to {
+        opacity: 0;
+    }
+}
+
+@keyframes slideTopIn {
+    to {
+        top: 15%;
+        opacity: 1;
+    }
+}
+
+/* BOTÕES */
+
+.da-btn {
+    background: #fc8585;
+    border-radius: 9999px;
+    border: none;
+    color: #3a2d32;
+    cursor: pointer;
+    display: block;
+    font-family: 'Open Sans', sans-serif;
+    font-weight: 600;
+    height: 45px;
+    margin: 30px auto 0;
+    padding: 0 35px;
+    text-align: center;
+    transition: all 0.2s ease-out;
+}
+
+.da-btn:hover {
+    background: #87cee5;
+    color: #3a2d32;
+    transform: scale(1.2);
+}
+
+/* CLASSES UTILITÁRIAS */
+.da-title-modal {
+    font-family: 'Dancing script';
+    text-align: center;
+    font-size: 40px;
+}
+
+.da-title-info {
+    font-family: 'Dancing script';
+    text-align: center;
+    margin: -300px 0 0 0;
+    font-size: 45px;
+    color: #a2ad91;
+    transition: all 0.2s ease-out;
+}
+
+.da-title-info:hover {
+    color: #87cee5;
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+.content-container .row {
+    margin-bottom: 30px;
+}
+
+.da-title {
+    font-family: 'Abril Fatface', serif;
+    margin-bottom: 10px;
+    margin-top: 20px;
+    text-align: center;
+}
+
+.da-description {
+    font-family: 'Ysabeau';
+    font-size: 23px;
+}
+
+.da-note-small {
+    font-family: 'Abril Fatface', serif;
+    font-size: 23px;
+    margin-top: 20px;
+}
+
+.da-font {
+    font-size: 20px;
+    font-family: 'Anton', sans-serif;
+    color: #3a2d32;
+    text-align: center;
+}
+
+.da-subtitle {
+    width: 120px;
+    height: 300px;
+    position: block;
+    font-family: Arial, Helvetica, sans-serif;
+    z-index: 300;
+}
+
+.da-subtitle p {
+    background-color: #87cee5;
+}
+
+.da-super-title {
+    color: #3a2d32;
+    font-family: 'Dancing Script';
+    font-size: 48px;
+    margin-bottom: 60px;
+    margin-top: 10px;
+    text-align: center;
+}
+
+.da-super-title:hover {
+    color: #a2ad91;
+    transition: all 0.2s ease-out;
+    transform: scale(1, 1);
+}
+
+/*CLASSES DE COR*/
+
+.da-text-black {
+    color: #000;
+}
+
+.da-text-dark {
+    color: #3a2d32;
+}
+
+.da-text-light {
+    color: #008b00;
+}
+
+.da-text-blue {
+    color: #87cee5;
+}
+
+.da-text-red {
+    color: #fc8585;
+}
+
+.da-text-gold {
+    color: #b28405;
+}
+
+
+.da-bg-bege {
+    background-color: #ffe3dc;
+}
+
+.da-bg-black {
+    color: #000;
+}
+
+.da-bg-dark {
+    background-color: #3a2d32;
+}
+
+.da-bg-light {
+    background-color: #008b00;
+}
+
+.da-bg-blue {
+    background-color: #87cee5;
+}
+
+.da-mar-15 {
+    margin: 15px;
+}
+
+.da-mar-top-15 {
+    margin-top: 15px;
+}
+
+.da-mar-right-15 {
+    margin-right: 15px;
+}
+
+.da-mar-bottom-15 {
+    margin-bottom: 15px;
+}
+
+.da-mar-left-15 {
+    margin-left: 15px;
+}
+
+.da-pad-15 {
+    padding: 15px;
+}
+
+.da-pad-top-15 {
+    padding-top: 15px;
+}
+
+.da-pad-right-15 {
+    padding-right: 15px;
+}
+
+.da-pad-bottom-15 {
+    padding-bottom: 15px;
+}
+
+.da-pad-left-15 {
+    padding-left: 15px;
+}
+
+.da-first-section {
+    height: calc(100vh - 30px);
+}
+
+/* CLASSES COMPORTAMENTO */
+.da-slide-top-in {
+    animation: slideTopIn 0.6s forwards cubic-bezier(0, 1.11, 0.6, 0.89);
+}
+
+.da-overlay {
+    background-color: rgba(135, 206, 229, 0.95);
+    bottom: 0;
+    display: none;
+    left: 0;
+    overflow-y: scroll;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 1000;
+}
+
+.da-modal {
+    border-radius: 0 30px 30px 30px;
+    display: none;
+    margin: 30px auto;
+    opacity: 0;
+    padding: 30px;
+    width: 800px;
+    z-index: 1200;
+}
+
+.da-is-open {
+    display: block;
+}
+
+.da-change-icon {
+    background-position-y: -45px;
+}
+
+.da-fade-out {
+    animation: fadeOut 2s forwards ease-out;
+}
+
+.block-scroll {
+    overflow: hidden;
+}
+
+@media (min-width: 320px) {    
+    .da-preloader {
+        width: 100%;
+        height: 100vh;
+        display: table;
+        background-color: #ffe3dc;
+    }
+
+    .da-preloader-info {
+        width: 100%;
+        height: 100vh;
+        display: table;
+        background-color: #242122;
+    }
+
+    .da-preloader-info {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .da-preloader-inner-info {
+        align-items: center;
+    }
+
+    .da-preloader {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: center;
+        align-items: center;
+        z-index: 1000;
+        position: fixed;
+        top: 0;
+        left: 0;
+    }
+
+    .da-preloader-inner {
+        align-items: center;
+    }
+
+    .da-modal-header {
+        width: 100%;
+        display: table;
+        position: relative;
+    }
+
+    .da-close-modal {
+        width: 38px;
+        height: 38px;
+        border-radius: 50%;
+        color: #000;
+        text-align: center;
+        line-height: center;
+        cursor: pointer;
+        position: absolute;
+        top: -15px;
+        right: -15px;
+        border: none;
+        background-color: #87cee5;
+        transition: all 0.2s ease-out;
+    }
+
+    .da-close-modal:hover {
+        background-color: #fc8585;
+        transform: scale(1.2);
+    }
+
+    .da-paragraph {
+        margin-bottom: 5px;
+    }
+
+    .da-topbar {
+        align-items: center;
+        background-color: #ffe3dc;
+        display: flex;
+        justify-content: space-between;
+        left: 0;
+        padding-bottom: 15px;
+        padding-top: 15px;
+        position: fixed;
+        right: 0;
+        top: 0;
+    }
+
+    .da-topbar-special {
+        width: 100%;
+        height: 110px;
+        display: block;
+        top: 0;
+        left: 0;
+    }
+
+    .da-logo img {
+        display: block;
+        width: 139px;
+        z-index: 100;
+    }
+
+    .da-menu {
+        display: none;
+    }
+
+    .da-proxima-pag {
+        display: none;
+    }
+
+    .da-btn-contact {
+        width: 45px;
+        height: 45px;
+        display: block;
+        background: #87cee5 url('../images/icon-contact-close.svg') no-repeat;
+        position: fixed;
+        bottom: 45px;
+        right: 45px;
+        border-radius: 50%;
+        z-index: 200;
+        transition: all 0.2s ease-out;
+        border: none;
+        cursor: pointer;
+    }
+
+    .da-contact-info {
+        width: 289px;
+        height: 155px;
+        padding: 25px;
+        position: fixed;
+        bottom: 115px;
+        right: 65px;
+        z-index: 200;
+        display: none;
+    }
+
+    .da-contact-info-inner {
+        display: table;
+        width: 100%;
+        float: right;
+    }
+
+    .da-contact-info-inner p {
+        font-size: 18px;
+        line-height: 24px;
+    }
+
+    .da-social-links {
+        width: 100%;
+        height: 45px;
+        display: block;
+        position: relative;
+        left: -12px;
+        margin-top: 7px;
+    }
+
+    .da-social {
+        width: 45px;
+        height: 45px;
+        display: inline-block;
+    }
+
+    .da-social > img {
+        width: 20px;
+        height: auto;
+        display: block;
+        margin: 13px auto 0;
+    }
+
+    .da-corner {
+        width: 25px;
+        height: 25px;
+        display: block;
+        float: right;
+        display: relative;
+    }
+
+    .da-corner:after {
+        content: '';
+        width: 25px;
+        height: 25px;
+        display: block;
+        position: absolute;
+        bottom: -23px;
+        right: 0;
+        background: transparent url(../images/corner.png) no-repeat;
+    }
+
+    .da-title-contact {
+        font-family: 'Abril Fatface', serif;
+        height: 30px;
+    }
+
+    .da-capa-info {
+        transition: all 0.2s ease-out;
+    }
+
+    .da-capa-info:hover {
+        transform: scale(1.1);
+        cursor: pointer;
+    }
+
+    .da-capa-info > img {
+        line-height: 0;
+    }
+
+    .da-capa {
+        border-radius: 2%;
+        transition: all 0.2s ease-out;
+    }
+
+    .da-capa:hover {
+        transform: scale(1.1);
+    }
+
+    .da-capa > img {
+        line-height: 0;
+    }
+
+    .da-conteudo {
+        border-radius: 2%;
+        max-width: 50%;
+        max-height: 50%;
+    }
+
+    .da-conteudo:hover {
+        transform: scale(1.1);
+    }
+
+    .da-avaliação {
+        width: 200px;
+        height: 200px;
+        background-color: #ffe3dc;
+        position: relative;
+        z-index: 3;
+    }
+}
+
+@media (min-width: 768px) {
+    .da-title {
+        margin-top: 0;
+    }
+}
+
+@media (min-width: 992px) {
+    .da-menu {
+        display: table;
+    }
+
+    .da-menu a {
+        color: #3a2d32;
+        display: inline-block;
+        font-family: 'Dancing Script', sans-serif;
+        font-size: 40px;
+        font-weight: 400;
+        margin: 0 20px 0 20px;
+        position: relative;
+        text-decoration: none;
+        z-index: 100;
+    }
+
+    .da-menu a:first-child {
+        margin-left: 0;
+    }
+
+    .da-menu a:last-child {
+        margin-right: 0;
+    }
+
+    .da-menu a:hover {
+        color: #a2ad91;
+    }
+
+    .da-menu a:before {
+        content: '';
+        width: 100%;
+        height: 4px;
+        background-color: #a2ad91;
+        display: block;
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        transition: all 0.2s ease-out;
+        transform: scale(0, 1);
+    }
+
+    .da-menu a:hover:before {
+        transform: scale(1, 1);
+    }
+
+    .da-proxima-pag {
+        cursor: pointer;
+        display: table;
+        float: left;
+        text-align: right;
+    }
+
+    .da-proxima-pag a {
+        font-family: 'Dancing Script';
+        font-size: 47px;
+        color: #fc8585;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: 400;
+        position: relative;
+        z-index: 100;
+    }
+
+    .da-proxima-pag a:first-child {
+        margin-left: 1;
+    }
+
+    .da-proxima-pag a:hover {
+        color: #87cee5;
+    }
+
+    .da-proxima-pag a:before {
+        content: '';
+        width: 100%;
+        height: 4px;
+        background-color: #87cee5;
+        display: block;
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        transition: all 0.2s ease-out;
+        transform: scale(0, 1);
+    }
+
+    .da-proxima-pag a:hover:before {
+        transform: scale(1, 1);
+    }
+
+    .da-pag-anterior {
+        display: table;
+        float: left;
+        text-align: right;
+    }
+
+    .da-pag-anterior a {
+        font-family: 'Dancing Script';
+        font-size: 47px;
+        color: #fc8585;
+        text-decoration: none;
+        display: inline-block;
+        font-weight: 400;
+        position: relative;
+        z-index: 100;
+    }
+
+    .da-pag-anterior a:first-child {
+        margin-left: 1;
+    }
+
+    .da-pag-anterior a:hover {
+        color: #87cee5;
+    }
+
+    .da-pag-anterior a:before {
+        content: '';
+        width: 100%;
+        height: 4px;
+        background-color: #87cee5;
+        display: block;
+        position: absolute;
+        bottom: -6px;
+        left: 0;
+        transition: all 0.2s ease-out;
+        transform: scale(0, 1);
+    }
+
+    .da-pag-anterior a:hover:before {
+        transform: scale(1, 1);
+    }
+}
